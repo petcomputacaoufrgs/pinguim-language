@@ -1,4 +1,4 @@
-name: Pinguim Language - Check
+name: Pinguim Language CI - Check
 on: [push, pull_request]
 
 jobs:
