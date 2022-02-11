@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Diagnostics","Uma lista de diagnósticos, i.e. lista de erros de lexing/parsing/compiling."],["Error","Um erro lançado pelo lexer/parser/compilador."],["IntoIter","Iterador por valor (owned) sobre a lista de diagnósticos/erros."],["Iter","Iterador por referência (borrowed) sobre a lista de diagnósticos/erros."]]});

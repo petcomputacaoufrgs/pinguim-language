@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["error","Esse módulo implementa ferramentas básicas para gerenciar erros de parse/compilação."],["position","Esse módulo define itens para rastrear posição e localização em um código fonte."]]});
