@@ -1,5 +1,8 @@
 //! Esse módulo implementa ferramentas básicas para gerenciar erros de parse/compilação.
 
+#[cfg(test)]
+mod test;
+
 use crate::position::Span;
 use std::{error::Error as StdError, fmt, slice, vec};
 
