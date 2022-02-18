@@ -175,6 +175,38 @@ fn diagnostics_is_err() {
 }
 
 #[test]
+fn diagnostics_count_empty() {
+    let diagnostics = Diagnostics::new();
+    assert_eq!(diagnostics.count_errors(), 0);
+}
+
+#[test]
+fn diagnostics_count_non_empty() {
+    let mut diagnostics = Diagnostics::new();
+
+    diagnostics.raise(Error::new(
+        SomeError,
+        Span {
+            start: Position {
+                line: 1,
+                column: 10,
+                utf8_index: 9,
+                utf16_index: 9,
+            },
+            end: Position {
+                line: 1,
+                column: 14,
+                utf8_index: 13,
+                utf16_index: 13,
+            },
+        },
+    ));
+    diagnostics.raise(Error::with_no_span(SevereError { level: 5 }));
+
+    assert_eq!(diagnostics.count_errors(), 2);
+}
+
+#[test]
 fn diagnostics_iter_empty() {
     let diagnostics = Diagnostics::new();
     assert_eq!(diagnostics.iter().next().map(|error| error.to_string()), None);
